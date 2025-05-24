@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ImagemFundoHero from './img/balanca.png';
 import ImagemAdvogada from './img/advogado.png';
@@ -10,15 +11,44 @@ import ImagemReuniaoEscritorio from './img/reuniao-escritorio.png';
 function App() {
   return (
     <div className="app">
+      {/* NAVBAR FIXA COM UI/UX */}
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div className="container">
+          <a className="navbar-brand fw-bold" href="#">Souza Carvalho Advocacia</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="#home">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#sobre">Sobre</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#areas">Áreas</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#contato">Contato</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-      {/* Seção 1: Hero */}
-      <section className="hero-section">
+      {/* CONTEÚDO ORIGINAL MANTIDO */}
+      <section className="hero-section" id='home'>
         <div className="hero-left">
           <div className="hero-content">
             <div className="dist">
-            <h1>CONSULTORIA JURÍDICA E SOLUÇÕES PERSONALIZADAS</h1>
+              <h1>CONSULTORIA JURÍDICA E SOLUÇÕES PERSONALIZADAS</h1>
             </div>
-            <p>Somos especializados em Direito Civil em toda sua abrangência, Direito Previdenciário e Direito Tributário.</p>
+            <div className="dista">
+              <p>
+                Somos especializados em Direito Civil em toda sua abrangência, Direito Previdenciário e Direito Tributário.
+              </p>
+            </div>
           </div>
         </div>
         <div className="hero-right">
@@ -26,8 +56,7 @@ function App() {
         </div>
       </section>
 
-      {/* Seção 2: Sobre Nós */}
-      <section className="sobre-section">
+      <section className="sobre-section" id="sobre">
         <div className="sobre-left">
           <img src={ImagemApertoMaos} alt="Aperto de Mãos" />
         </div>
@@ -44,8 +73,7 @@ function App() {
         </div>
       </section>
 
-      {/* Seção 3: Áreas de Atuação */}
-      <section className="areas-section">
+      <section className="areas-section" id="areas">
         <h2>NOSSAS ÁREAS DE ATUAÇÃO</h2>
         <div className="areas-container">
           <div className="areas-image">
@@ -62,7 +90,6 @@ function App() {
                   <div className="area-box">AÇÕES CÍVEIS EM GERAL</div>
                 </div>
               </div>
-
               <div className="area-area">
                 <div className="area-linha">TRIBUTÁRIO</div>
                 <div className="area-sub">
@@ -71,7 +98,6 @@ function App() {
                 </div>
               </div>
             </div>
-
             <div className="area-area">
               <div className="area-linha">PREVIDENCIÁRIO</div>
               <div className="area-sub area-box">
@@ -92,8 +118,7 @@ function App() {
         </div>
       </section>
 
-      {/* Seção 4: Contate-nos */}
-      <section className="contact-section">
+      <section className="contact-section" id="contato">
         <div className="contact-left">
           <h2>CONTATE-NOS</h2>
           <p><strong>Tel.:</strong> (27) 99829-7573</p>
@@ -105,18 +130,16 @@ function App() {
             Avenida Antônio Pinto de Aguiar, 310<br />
             Mário Cypreste - Vitória - ES
           </p>
-          <button >AGENDE UMA CONSULTA</button>
+          <button>AGENDE UMA CONSULTA</button>
         </div>
         <div className="contact-right">
           <img src={ImagemReuniaoEscritorio} alt="Reunião no Escritório" />
         </div>
       </section>
 
-      {/* Rodapé */}
       <footer className="footer">
         &copy; {new Date().getFullYear()} Souza Carvalho Advocacia. Todos os direitos reservados.
       </footer>
-
     </div>
   );
 }
