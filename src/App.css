@@ -1,38 +1,312 @@
-.App {
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f1f1f1;
+  color: #111;
+}
+
+.app {
+  width: 100%;
+}
+
+/* HERO */
+.hero-section {
+  display: flex;
+  min-height: 100vh;
+}
+
+.hero-left {
+  flex: 1;
+  position: relative; /* Necessário para posicionar o conteúdo */
+  background: url('./img/balanca.png') no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+
+
+
+.dist h1{
+ font-size: 24px;
+  margin-bottom: 20px;
+  
+}
+.hero-content p {
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.hero-right {
+  flex: 1;
+  background-color: #ddd8ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 80%;
+  border-radius: 4px;
+}
+
+/* SOBRE */
+.sobre-section {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sobre-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dbdbdb;
+}
+
+.sobre-left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.sobre-right {
+  flex: 1;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-content {
+  max-width: 500px;
+  padding: 40px;
+}
+
+.sobre-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sobre-content p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sobre-content button {
+ background: #111;
+  color: #fff;
+  margin-left: 30%;
+  margin-top: 10%;
+  border: none;
+  width: 50%;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.sobre-content button:hover {
+  background: #333;
+}
+
+/* ÁREAS */
+.areas-section {
+  padding: 60px 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.areas-section h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.areas-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.areas-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 4px;
+}
+
+.areas-organograma {
   display: flex;
   flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.areas-top {
+  display: flex;
+  gap: 40px;
+}
+
+/* Cada bloco */
+.area-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.area-linha {
+  font-weight: bold;
+  border-right: 2px solid #000;
+  padding-right: 10px;
+}
+
+.area-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.area-box {
+  border: 1px solid #111;
+  padding: 10px;
+  min-width: 250px;
+  text-align: center;
+}
+
+.area-box ul {
+  list-style: disc;
+  margin-left: 20px;
+  text-align: left;
+}
+
+/* CONTATO */
+.contact-section {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fcfaf7;
+}
+
+.contact-left {
+  flex: 1;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-left h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+.contact-left p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-button {
+  margin-top: 30px;
+  color: #000;
+}
+
+.contact-left button {
+  background: #111;
+  color: #fff;
+  margin-left: 30%;
+  margin-top: 10%;
+  border: none;
+  width: 40%;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.contact-button button:hover {
+  background: #333;
+}
+
+.contact-right {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-right img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsivo */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .contact-right img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-left {
+    padding: 40px 20px;
+  }
+}
+
+
+/* FOOTER */
+.footer {
+  background-color: #111;
+  color: #f9f9f9;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  font-family: 'Georgia', serif;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero-section, .sobre-section, .contact-section, .areas-container, .areas-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-right img, .sobre-left img, .areas-image img, .contact-right img {
+    width: 100%;
+    height: auto;
+  }
+
+  .area-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .area-linha {
+    border: none;
+    padding: 0;
   }
 }
