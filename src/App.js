@@ -2,146 +2,129 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ImagemFundoHero from './img/balanca.png';
-import ImagemAdvogada from './img/advogado.png';
-import ImagemApertoMaos from './img/aperto-de-maos.png';
-import ImagemContratoLaptop from './img/contrato-laptop.png';
-import ImagemReuniaoEscritorio from './img/reuniao-escritorio.png';
+import imgAdvogado from './img/advogado.png';
+import imgMaos from './img/aperto-de-maos.png';
+import imgContrato from './img/contrato-laptop.png';
+import imgReuniao from './img/reuniao-escritorio.png';
 
 function App() {
   return (
     <div className="app">
-      {/* NAVBAR FIXA COM UI/UX */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+      {/* NAVBAR */}
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
         <div className="container">
-          <a className="navbar-brand fw-bold" href="#">Souza Carvalho Advocacia</a>
+          <a className="navbar-brand fw-bold fs-4" href="#">Souza Carvalho Advocacia</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="#home">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#sobre">Sobre</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#areas">Áreas</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#contato">Contato</a>
-              </li>
+              <li className="nav-item"><a className="nav-link" href="#home">Início</a></li>
+              <li className="nav-item"><a className="nav-link" href="#sobre">Sobre</a></li>
+              <li className="nav-item"><a className="nav-link" href="#areas">Áreas</a></li>
+              <li className="nav-item"><a className="nav-link" href="#contato">Contato</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-      {/* SEÇÃO HERO */}
-      <section className="hero-section">
-        <div className="hero-overlay">
-          <div className="hero-container">
-            <div className="hero-content">
-              <h1>CONSULTORIA JURÍDICA E SOLUÇÕES PERSONALIZADAS</h1>
-              <p>
-                Somos especializados em Direito Civil em toda sua abrangência,
-                Direito Previdenciário e Direito Tributário.
-              </p>
+      {/* HERO */}
+      <section className="hero" id="home">
+        <div className="hero-overlay d-flex align-items-center">
+          <div className="container py-5 text-white text-center text-lg-start d-flex flex-column flex-lg-row align-items-center justify-content-between">
+            <div className="mb-4 mb-lg-0">
+              <h1 className="display-5 fw-bold">Consultoria Jurídica de Excelência</h1>
+              <p className="lead">Soluções personalizadas em Direito Civil, Previdenciário e Tributário.</p>
+              <a href="#contato" className="btn btn-outline-light mt-3 px-4 py-2">Agende sua consulta</a>
             </div>
-            <div className="hero-image">
-              <img src={ImagemAdvogada} alt="Advogado" />
+            <div>
+              <img src={imgAdvogado} alt="Advogado" className="hero-img" />
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* SEÇÃO SOBRE */}
-      <section className="sobre-section" id="sobre">
-        <div className="sobre-left">
-          <img src={ImagemApertoMaos} alt="Aperto de Mãos" loading="lazy" />
-        </div>
-        <div className="sobre-right">
-          <div className="sobre-content">
-            <h2>SOBRE NÓS</h2>
-            <p>
-              Na Souza Carvalho Advocacia, os princípios da advocacia são tratados como pilares essenciais que sustentam o exercício ético e responsável da profissão.
-              Dr. Eliezer de Souza Carvalho, advogado, atua com firme compromisso com a integridade, a competência e a construção de uma relação justa e transparente com os clientes e a sociedade.
-              Entre os valores que orientam nossa atuação estão a confidencialidade, a independência, a imparcialidade, a honestidade, a lealdade, a competência, o respeito e a transparência.
-            </p>
-            <button>MARQUE UMA CONSULTA</button>
+      {/* SOBRE */}
+      <section className="section bg-white" id="sobre">
+        <div className="container d-flex flex-column flex-lg-row align-items-center">
+          <div className="col-lg-6 mb-4 mb-lg-0">
+            <img src={imgMaos} alt="Confiança" className="img-fluid rounded shadow" />
+          </div>
+          <div className="col-lg-6">
+            <h2 className="mb-3">Sobre o Escritório</h2>
+            <p>Na Souza Carvalho Advocacia, tratamos cada caso com ética, sigilo e dedicação. Liderado pelo Dr. Eliezer de Souza Carvalho, oferecemos atendimento humanizado e transparente, pautado nos princípios da honestidade, competência e lealdade.</p>
+            <a href="#contato" className="btn btn-dark mt-3 px-4 py-2">Fale com um especialista</a>
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO ÁREAS */}
-      <section className="areas-section" id="areas">
-        <h2>NOSSAS ÁREAS DE ATUAÇÃO</h2>
-        <div className="areas-container">
-          <div className="areas-image">
-            <img src={ImagemContratoLaptop} alt="Pessoa assinando contrato" loading="lazy" />
-          </div>
-          <div className="areas-organograma">
-            <div className="areas-top">
-              <div className="area-area">
-                <div className="area-linha">CÍVEL</div>
-                <div className="area-sub">
-                  <div className="area-box">DIVÓRCIOS CONSENSUAIS E LITIGIOSOS</div>
-                  <div className="area-box">AÇÕES DE ALIMENTOS E GUARDA DE MENORES</div>
-                  <div className="area-box">INVENTÁRIOS E AFINS</div>
-                  <div className="area-box">AÇÕES CÍVEIS EM GERAL</div>
-                </div>
-              </div>
-              <div className="area-area">
-                <div className="area-linha">TRIBUTÁRIO</div>
-                <div className="area-sub">
-                  <div className="area-box">RESTITUIÇÃO DE IMPOSTOS</div>
-                  <div className="area-box">DEFESA EM EXECUÇÃO FISCAL</div>
+      {/* ÁREAS DE ATUAÇÃO */}
+      <section className="section bg-light" id="areas">
+        <div className="container">
+          <h2 className="text-center mb-5">Áreas de Atuação</h2>
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="card h-100 shadow-sm p-3">
+                <div className="card-body">
+                  <h5 className="card-title mb-3">Direito Civil</h5>
+                  <ul className="list-unstyled lh-lg">
+                    <li>Divórcios</li>
+                    <li>Alimentos e Guarda</li>
+                    <li>Inventários</li>
+                    <li>Ações cíveis em geral</li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div className="area-area">
-              <div className="area-linha">PREVIDENCIÁRIO</div>
-              <div className="area-sub area-box">
-                <strong>APOSENTADORIAS:</strong>
-                <ul>
-                  <li>POR TEMPO DE CONTRIBUIÇÃO</li>
-                  <li>POR IDADE</li>
-                  <li>ESPECIAL: ATIVIDADES CONSIDERADAS INSALUBRES, PERIGOSAS OU PENOSAS.</li>
-                </ul>
-                <div>INVALIDEZ</div>
-                <div>PARA PROFESSORES</div>
-                <div>PESSOAS COM DEFICIÊNCIA</div>
-                <div>TRABALHADORES RURAIS</div>
-                <div>BENEFÍCIOS PREVIDENCIÁRIOS</div>
+            <div className="col-md-4">
+              <div className="card h-100 shadow-sm p-3">
+                <div className="card-body">
+                  <h5 className="card-title mb-3">Direito Tributário</h5>
+                  <ul className="list-unstyled lh-lg">
+                    <li>Restituição de Impostos</li>
+                    <li>Defesa em Execuções Fiscais</li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <div className="col-md-4">
+              <div className="card h-100 shadow-sm p-3">
+                <div className="card-body">
+                  <h5 className="card-title mb-3">Direito Previdenciário</h5>
+                  <ul className="list-unstyled lh-lg">
+                    <li>Aposentadorias</li>
+                    <li>Benefícios para deficientes</li>
+                    <li>Trabalhadores rurais</li>
+                    <li>Revisões e recursos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-5">
+            <img src={imgContrato} alt="Assinando contrato" className="img-fluid rounded shadow" style={{ maxWidth: '500px' }} />
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO CONTATO */}
-      <section className="contact-section" id="contato">
-        <div className="contact-left">
-          <h2>CONTATE-NOS</h2>
-          <p><strong>Tel.:</strong> (27) 99829-7573</p>
-          <p><strong>Emails:</strong><br />
-            escarvalhoadvocacia@gmail.com<br />
-            advocaciasouzacarvalho01@gmail.com
-          </p>
-          <p><strong>Endereço:</strong><br />
-            Avenida Antônio Pinto de Aguiar, 310<br />
-            Mário Cypreste - Vitória - ES
-          </p>
-          <button>AGENDE UMA CONSULTA</button>
-        </div>
-        <div className="contact-right">
-          <img src={ImagemReuniaoEscritorio} alt="Reunião no Escritório" loading="lazy" />
+      {/* CONTATO */}
+      <section className="section bg-white" id="contato">
+        <div className="container d-flex flex-column flex-lg-row align-items-center">
+          <div className="col-lg-6 mb-4 mb-lg-0">
+            <h2 className="mb-3">Entre em Contato</h2>
+            <p><strong>Telefone:</strong> (27) 99829-7573</p>
+            <p><strong>E-mail:</strong> escarvalhoadvocacia@gmail.com</p>
+            <p><strong>Endereço:</strong><br />Avenida Antônio Pinto de Aguiar, 310<br />Mário Cypreste - Vitória/ES</p>
+            <a href="https://wa.me/27992749697" className="btn btn-dark mt-3 px-4 py-2">Solicitar atendimento</a>
+          </div>
+          <div className="col-lg-6">
+            <img src={imgReuniao} alt="Reunião no escritório" className="img-fluid rounded shadow" />
+          </div>
         </div>
       </section>
 
-      {/* RODAPÉ */}
-      <footer className="footer">
+      {/* FOOTER */}
+      <footer className="footer bg-dark text-white text-center py-4 mt-5">
         &copy; {new Date().getFullYear()} Souza Carvalho Advocacia. Todos os direitos reservados.
       </footer>
     </div>
