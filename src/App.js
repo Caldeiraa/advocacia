@@ -116,7 +116,7 @@ function App() {
             <p><strong>Telefone:</strong> (27) 99829-7573</p>
             <p><strong>E-mail:</strong> escarvalhoadvocacia@gmail.com</p>
             <p><strong>Endereço:</strong><br />Avenida Antônio Pinto de Aguiar, 310<br />Mário Cypreste - Vitória/ES</p>
-            <a href="https://wa.me/27992749697" className="btn btn-dark mt-3 px-4 py-2">Solicitar atendimento</a>
+            <a href="https://wa.me/27998297573" className="btn btn-dark mt-3 px-4 py-2">Solicitar atendimento</a>
           </div>
           <div className="col-lg-6">
             <img src={imgReuniao} alt="Reunião no escritório" className="img-fluid rounded shadow" />
