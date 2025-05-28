@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { FaGavel, FaFileInvoiceDollar, FaUsersCog } from 'react-icons/fa';
+
 import imgAdvogado from './img/advogado.png';
 import imgMaos from './img/aperto-de-maos.png';
-import imgContrato from './img/contrato-laptop.png';
 import imgReuniao from './img/reuniao-escritorio.png';
 
 function App() {
@@ -51,8 +52,8 @@ function App() {
             <img src={imgMaos} alt="Confiança" className="img-fluid rounded shadow" />
           </div>
           <div className="col-lg-6">
-            <h2 className="mb-3">Sobre o Escritório</h2>
-            <p>Na Souza Carvalho Advocacia, tratamos cada caso com ética, sigilo e dedicação. Liderado pelo Dr. Eliezer de Souza Carvalho, oferecemos atendimento humanizado e transparente, pautado nos princípios da honestidade, competência e lealdade.</p>
+            <h2 className="mb-3">Sobre Nós</h2>
+            <p>Na Souza Carvalho Advocacia, os princípios da advocacia são tratados como pilares essenciais que sustentam o exercício ético e responsável da profissão. Dr. Eliezer de Souza Carvalho, advogado, atua com firme compromisso com a integridade, a competência e a construção de uma relação justa e transparente com os clientes e a sociedade. Entre os valores que orientam nossa atuação estão a confidencialidade, a independência, a imparcialidade, a honestidade, a lealdade, a competência, o respeito e a transparência.</p>
             <a href="#contato" className="btn btn-dark mt-3 px-4 py-2">Fale com um especialista</a>
           </div>
         </div>
@@ -62,47 +63,47 @@ function App() {
       <section className="section bg-light" id="areas">
         <div className="container">
           <h2 className="text-center mb-5">Áreas de Atuação</h2>
-          <div className="row g-4">
+          <div className="row g-4 justify-content-center">
             <div className="col-md-4">
-              <div className="card h-100 shadow-sm p-3">
-                <div className="card-body">
-                  <h5 className="card-title mb-3">Direito Civil</h5>
-                  <ul className="list-unstyled lh-lg">
-                    <li>Divórcios</li>
-                    <li>Alimentos e Guarda</li>
-                    <li>Inventários</li>
-                    <li>Ações cíveis em geral</li>
-                  </ul>
+              <div className="card area-card h-100 shadow-sm p-4 text-center">
+                <div className="icon-wrapper mb-3">
+                  <FaGavel size={40} color="#2c3e50" />
                 </div>
+                <h5 className="card-title mb-3">Direito Civil</h5>
+                <ul className="list-unstyled lh-lg">
+                  <li>Divórcios</li>
+                  <li>Alimentos e Guarda</li>
+                  <li>Inventários</li>
+                  <li>Ações cíveis em geral</li>
+                </ul>
               </div>
             </div>
             <div className="col-md-4">
-              <div className="card h-100 shadow-sm p-3">
-                <div className="card-body">
-                  <h5 className="card-title mb-3">Direito Tributário</h5>
-                  <ul className="list-unstyled lh-lg">
-                    <li>Restituição de Impostos</li>
-                    <li>Defesa em Execuções Fiscais</li>
-                  </ul>
+              <div className="card area-card h-100 shadow-sm p-4 text-center">
+                <div className="icon-wrapper mb-3">
+                  <FaFileInvoiceDollar size={40} color="#2c3e50" />
                 </div>
+                <h5 className="card-title mb-3">Direito Tributário</h5>
+                <ul className="list-unstyled lh-lg">
+                  <li>Restituição de Impostos</li>
+                  <li>Defesa em Execuções Fiscais</li>
+                </ul>
               </div>
             </div>
             <div className="col-md-4">
-              <div className="card h-100 shadow-sm p-3">
-                <div className="card-body">
-                  <h5 className="card-title mb-3">Direito Previdenciário</h5>
-                  <ul className="list-unstyled lh-lg">
-                    <li>Aposentadorias</li>
-                    <li>Benefícios para deficientes</li>
-                    <li>Trabalhadores rurais</li>
-                    <li>Revisões e recursos</li>
-                  </ul>
+              <div className="card area-card h-100 shadow-sm p-4 text-center">
+                <div className="icon-wrapper mb-3">
+                  <FaUsersCog size={40} color="#2c3e50" />
                 </div>
+                <h5 className="card-title mb-3">Direito Previdenciário</h5>
+                <ul className="list-unstyled lh-lg">
+                  <li>Aposentadorias</li>
+                  <li>Benefícios para deficientes</li>
+                  <li>Trabalhadores rurais</li>
+                  <li>Revisões e recursos</li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div className="text-center mt-5">
-            <img src={imgContrato} alt="Assinando contrato" className="img-fluid rounded shadow" style={{ maxWidth: '500px' }} />
           </div>
         </div>
       </section>
