@@ -29,7 +29,7 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* Home */}
       <section className="hero" id="home">
         <div className="hero-overlay d-flex align-items-center">
           <div className="container py-5 text-white text-center text-lg-start d-flex flex-column flex-lg-row align-items-center justify-content-between">
