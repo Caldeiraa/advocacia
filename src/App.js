@@ -119,19 +119,19 @@ function App() {
             <a href="https://wa.me/27998297573" className="btn btn-dark mt-3 px-4 py-2">Solicitar atendimento</a>
           </div>
           <div className="col-lg-6">
-             <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1322.8396988419447!2d-40.35661064689834!3d-20.31865015730908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83c4eead510db%3A0x4fa333d0690f299d!2sAv.%20Ant%C3%B4nio%20Pinto%20de%20%C3%81guiar%2C%20330%20-%20M%C3%A1rio%20Cypreste%2C%20Vit%C3%B3ria%20-%20ES%2C%2029027-200%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1749098851588!5m2!1spt-BR!2sus" // Replace with actual embed URL for Google Maps
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Office Location"
-          ></iframe>
+            <div className="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1322.8396988419447!2d-40.35661064689834!3d-20.31865015730908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83c4eead510db%3A0x4fa333d0690f299d!2sAv.%20Ant%C3%B4nio%20Pinto%20de%20%C3%81guiar%2C%20330%20-%20M%C3%A1rio%20Cypreste%2C%20Vit%C3%B3ria%20-%20ES%2C%2029027-200%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1749098851588!5m2!1spt-BR!2sus"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
+
       {/* FOOTER */}
       <footer className="footer bg-dark text-white text-center py-4 mt-5">
         &copy; {new Date().getFullYear()} Souza Carvalho Advocacia. Todos os direitos reservados.
