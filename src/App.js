@@ -7,27 +7,47 @@ import { FaGavel, FaFileInvoiceDollar, FaUsersCog } from 'react-icons/fa';
 import imgAdvogado from './img/advogado.png';
 import imgMaos from './img/aperto-de-maos.png';
 import imgReuniao from './img/reuniao-escritorio.png';
+import Logo from './img/sua-logo.png'
 
 function App() {
   return (
     <div className="app">
       {/* NAVBAR */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
-        <div className="container">
-          <a className="navbar-brand fw-bold fs-4" href="#">Souza Carvalho Advocacia</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item"><a className="nav-link" href="#home">Início</a></li>
-              <li className="nav-item"><a className="nav-link" href="#sobre">Sobre</a></li>
-              <li className="nav-item"><a className="nav-link" href="#areas">Áreas</a></li>
-              <li className="nav-item"><a className="nav-link" href="#contato">Contato</a></li>
-            </ul>
+      <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
+      <div className="container d-flex align-items-center justify-content-between">
+        <a className="navbar-brand d-flex align-items-center" href="#">
+          <img src={Logo} alt="Logo SC" className="navbar-logo" />
+          <div className="navbar-text">
+            <span className="title">SOUZA CARVALHO</span>
+            <span className="subtitle">ADVOCACIA</span>
           </div>
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#home">Início</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#areas">Áreas</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
       {/* Home */}
       <section className="hero" id="home">
@@ -36,7 +56,6 @@ function App() {
             <div className="mb-4 mb-lg-0">
               <h1 className="display-5 fw-bold">Consultoria Jurídica de Excelência</h1>
               <p className="lead">Soluções personalizadas em Direito Civil, Previdenciário e Tributário.</p>
-              <a href="#contato" className="btn btn-outline-light mt-3 px-4 py-2">Agende sua consulta</a>
             </div>
             <div>
               <img src={imgAdvogado} alt="Advogado" className="hero-img" />

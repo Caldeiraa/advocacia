@@ -14,6 +14,70 @@ a:hover {
   color: #0056b3;
 }
 
+.custom-navbar {
+  background-color: #272949; /* NOVO tom igual ao da logo */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.navbar-logo {
+  height: 55px;
+  margin-right: 10px;
+}
+
+.navbar-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.navbar-text .title {
+  color: #D4AF37;
+  font-weight: bold;
+  font-size: 1.35rem;
+  margin-bottom: 0.1rem;
+}
+
+.navbar-text .subtitle {
+  color: #D4AF37;
+  letter-spacing: 4px;
+  font-size: 0.72rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #D4AF37;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 45px;
+  }
+
+  .navbar-text .title {
+    font-size: 1.1rem;
+  }
+
+  .navbar-text .subtitle {
+    font-size: 0.65rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+
+
 .hero {
   background: url('./img/balanca.png') no-repeat center/cover;
   height: 100vh;
@@ -146,3 +210,10 @@ a:hover {
   border: 0;
 }
 
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
