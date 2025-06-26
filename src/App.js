@@ -152,7 +152,7 @@ function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer bg-dark text-white text-center py-4 mt-5">
+      <footer className="footer text-white text-center py-4 mt-5">
         &copy; {new Date().getFullYear()} Souza Carvalho Advocacia. Todos os direitos reservados.
       </footer>
     </div>
