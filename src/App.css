@@ -15,7 +15,7 @@ a:hover {
 }
 
 .custom-navbar {
-  background-color: #272949; /* NOVO tom igual ao da logo */
+  background-color: #272949;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
@@ -75,8 +75,6 @@ a:hover {
     margin-top: 0.5rem;
   }
 }
-
-
 
 .hero {
   background: url('./img/balanca.png') no-repeat center/cover;
@@ -211,10 +209,65 @@ a:hover {
   border: 0;
 }
 
-
 .sobre-texto {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
+}
+
+.sobre-texto p, 
+.sobre-texto h2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* NOVO CSS: Áreas de Atuação aprimoradas */
+.area-card-custom {
+  border: none;
+  border-radius: 18px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.area-card-custom:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px rgba(44, 62, 80, 0.2);
+}
+
+.card-title-custom {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #272949;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.icon-wrapper-custom {
+  background: linear-gradient(135deg, #272949, #515185);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(39, 41, 73, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.area-card-custom:hover .icon-wrapper-custom {
+  transform: scale(1.1);
+}
+
+.area-card-custom ul li {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.area-card-custom ul li:hover {
+  color: #272949;
 }
