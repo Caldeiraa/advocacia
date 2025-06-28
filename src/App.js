@@ -90,10 +90,10 @@ function App() {
                 </div>
                 <h5 className="card-title-custom mb-3">Direito Civil</h5>
                 <ul className="list-unstyled lh-lg">
-                  <li>Divórcios</li>
-                  <li>Inventários</li>
-                  <li>Alimentos e Guarda</li>
-                  <li>Ações cíveis em geral</li>
+                  <li>• Divórcios</li>
+                  <li>• Alimentos e Guarda</li>
+                  <li>• Inventários</li>
+                  <li>• Ações cíveis em geral</li>
                 </ul>
               </div>
             </div>
@@ -104,8 +104,8 @@ function App() {
                 </div>
                 <h5 className="card-title-custom mb-3">Direito Tributário</h5>
                 <ul className="list-unstyled lh-lg">
-                  <li>Restituição de Impostos</li>
-                  <li>Defesa em Execuções Fiscais</li>
+                  <li>• Restituição de Impostos</li>
+                  <li>• Defesa em Execuções Fiscais</li>
                 </ul>
               </div>
             </div>
@@ -116,10 +116,10 @@ function App() {
                 </div>
                 <h5 className="card-title-custom mb-3">Direito Previdenciário</h5>
                 <ul className="list-unstyled lh-lg">
-                  <li>Aposentadorias</li>
-                  <li>Benefícios para deficientes</li>
-                  <li>Trabalhadores rurais</li>
-                  <li>Revisões e recursos</li>
+                  <li>• Aposentadorias</li>
+                  <li>• Benefícios para deficientes</li>
+                  <li>• Trabalhadores rurais</li>
+                  <li>• Revisões e recursos</li>
                 </ul>
               </div>
             </div>
