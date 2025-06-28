@@ -73,7 +73,7 @@ function App() {
           <div className="col-lg-6 sobre-texto">
             <h2 className="mb-3">Sobre Nós</h2>
             <p>Na Souza Carvalho Advocacia, os princípios da advocacia são tratados como pilares essenciais que sustentam o exercício ético e responsável da profissão. Dr. Eliezer de Souza Carvalho, advogado, atua com firme compromisso com a integridade, a competência e a construção de uma relação justa e transparente com os clientes e a sociedade. Entre os valores que orientam nossa atuação estão a confidencialidade, a independência, a imparcialidade, a honestidade, a lealdade, a competência, o respeito e a transparência.</p>
-            <a href="#contato" className="btn btn-dark mt-3 px-4 py-2">Fale com um especialista</a>
+            <a href="#contato" className="btn mt-3 px-4 py-2">Fale com um especialista</a>
           </div>
         </div>
       </section>
@@ -127,7 +127,6 @@ function App() {
         </div>
       </section>
 
-
       {/* CONTATO */}
       <section className="section bg-white" id="contato">
         <div className="container d-flex flex-column flex-lg-row align-items-center">
@@ -136,7 +135,7 @@ function App() {
             <p><strong>Telefone:</strong> (27) 99829-7573</p>
             <p><strong>E-mail:</strong> escarvalhoadvocacia@gmail.com</p>
             <p><strong>Endereço:</strong><br />Avenida Antônio Pinto de Aguiar, 310<br />Mário Cypreste - Vitória/ES</p>
-            <a href="https://wa.me/27998297573" className="btn btn-dark mt-3 px-4 py-2">Solicitar atendimento</a>
+            <a href="https://wa.me/27998297573" className="btn mt-3 px-4 py-2">Solicitar atendimento</a>
           </div>
           <div className="col-lg-6">
             <div className="map-responsive">
