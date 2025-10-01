@@ -1,283 +1,421 @@
+/* App.css (Código completo e corrigido) */
+
+/* FONTES (Exemplo usando Google Fonts, adicione no seu index.html se desejar) */
+/* @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;700&display=swap'); */
+
+/* RESET E ESTILOS GLOBAIS */
+:root {
+  --dark-blue: #202945;
+  --footer-blue: #1A3A53;
+  --gold-text: #C4B078;
+  --light-gray-bg: #EAE7E2;
+  --serif-font: 'Lora', serif; /* Fonte para títulos principais */
+  --sans-font: 'Roboto', sans-serif; /* Fonte para textos corridos */
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f8;
-  color: #212529;
+  font-family: var(--sans-font);
+  background-color: #FFFFFF;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: none;
-  transition: color 0.3s ease;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif-font);
 }
 
-a:hover {
-  color: #0056b3;
+.section-title {
+  font-family: var(--serif-font);
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.custom-navbar {
-  background-color: #272949;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
+.text-content {
+  color: #555;
+  line-height: 1.7;
 }
 
+/* HEADER / NAVBAR */
+.navbar {
+  background-color: var(--dark-blue);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gold-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.nav-scrolled {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* A classe .navbar-logo foi removida pois não é mais usada */
+/*
 .navbar-logo {
-  height: 55px;
-  margin-right: 10px;
+  height: 60px;
+  margin-right: 15px;
 }
+*/
 
 .navbar-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  line-height: 1;
+  color: var(--gold-text);
 }
 
 .navbar-text .title {
-  color: #D4AF37;
   font-weight: bold;
-  font-size: 1.35rem;
-  margin-bottom: 0.1rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #D4AF37;
 }
 
 .navbar-text .subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  opacity: 0.9;
   color: #D4AF37;
-  letter-spacing: 4px;
-  font-size: 0.72rem;
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff;
+  color: #FFFFFF;
   font-weight: 500;
-  margin-left: 1.4rem;
-  transition: color 0.3s ease;
+  margin: 0 15px;
+  transition: color 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #D4AF37;
+  color: var(--gold-text);
+}
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-@media (max-width: 768px) {
-  .navbar-logo {
-    height: 45px;
-  }
 
-  .navbar-text .title {
-    font-size: 1.1rem;
-  }
-
-  .navbar-text .subtitle {
-    font-size: 0.65rem;
-  }
-
-  .navbar-nav .nav-link {
-    margin-left: 0;
-    margin-top: 0.5rem;
-  }
-}
-
-.hero {
-  background: url('./img/balanca.png') no-repeat center/cover;
-  height: 100vh;
+/* HERO SECTION */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  color: #000;
+  padding: 120px 0;
   position: relative;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.65);
-  height: 100%;
+  /* background-color: rgba(255, 255, 255, 0.5); /* Overlay claro para legibilidade */
+  padding: 2rem 0;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+.hero-title {
+  font-family: var(--serif-font);
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.25rem;
-}
-
-.hero-img {
+.hero-subtitle {
+  font-size: 1.2rem;
   max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 40px 24px rgba(0, 0, 0, 0.5);
-  transition: transform 0.6s ease;
+  margin-top: 20px;
 }
 
-.hero-img:hover {
-  transform: scale(1.05);
+/* ABOUT SECTION */
+.about-section {
+  padding: 80px 0;
+  background-color: #FFF;
 }
 
-.section {
-  padding: 4rem 1rem;
+.subsection-title {
+  font-family: var(--serif-font);
+  font-weight: bold;
+  margin-top: 2rem;
 }
 
-.card {
-  border: none;
-  border-radius: 12px;
-  background-color: #fff;
-  transition: box-shadow 0.3s ease;
+.values-list {
+  list-style: none;
+  padding-left: 0;
 }
 
-.card:hover {
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+.values-list li {
+  margin-bottom: 0.5rem;
+  color: #555;
 }
 
-.card-title {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #2c3e50;
+/* ÁREAS DE ATUAÇÃO SECTION */
+.areas-section {
+  padding: 80px 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efeito parallax */
+}
+.areas-overlay {
+    background-color: rgba(10, 20, 30, 0.7); /* Overlay escuro para legibilidade */
+    padding: 80px 0;
 }
 
-/* ✅ BOTÕES COM COR PADRÃO DO SITE */
-.btn {
-  background-color: #272949 !important;
-  border: none;
-  color: #fff !important;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+.areas-title {
+  font-size: 3rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-left: 4px solid var(--gold-text);
+  padding-left: 20px;
 }
 
-.btn:hover {
-  background-color: #272949 !important;
-  color: #fff;
-}
-
-.footer {
-  font-size: 0.95rem;
-  background-color: #272949;
+.areas-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .area-card {
-  padding: 30px 20px;
-  box-shadow: 0 4px 18px rgba(44, 62, 80, 0.1);
-  background-color: #ffffff;
-  border-radius: 15px;
-  cursor: default;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.area-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 35px rgba(44, 62, 80, 0.25);
-}
-
-.icon-wrapper {
-  background-color: #e1e9f6;
-  width: 70px;
-  height: 70px;
-  margin: 0 auto;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.list-unstyled li {
-  font-size: 1rem;
-  color: #444d56;
-  margin-bottom: 0.4rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-@media (max-width: 992px) {
-  .hero-img {
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero-img {
-    max-width: 200px;
-  }
-}
-  
-.map-responsive {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.map-responsive iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
+.area-card.dark-card {
+  background-color: var(--dark-blue);
+  color: #FFF;
 }
-
-.sobre-texto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+.area-card.light-card {
+  background-color: #FFF;
+  color: #333;
+  grid-column: span 2; /* Ocupa a largura toda */
 }
-
-.sobre-texto p {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 19px;
-}
-
-.sobre-texto h2{
-  font-size: 30px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-/* NOVO CSS: Áreas de Atuação aprimoradas */
-.area-card-custom {
-  border: none;
-  border-radius: 18px;
-  background-color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-.area-card-custom:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 16px 35px rgba(44, 62, 80, 0.2);
-}
-
-.card-title-custom {
-  font-size: 1.4rem;
+.area-card h5 {
   font-weight: bold;
-  color: #272949;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--gold-text);
+}
+.area-card small {
+  font-size: 0.9em;
+  color: #999;
 }
 
-.icon-wrapper-custom {
-  background: linear-gradient(135deg, #272949, #515185);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(39, 41, 73, 0.3);
-  transition: transform 0.3s ease;
+.other-areas {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  color: #333;
+}
+.other-areas h5 {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+.other-areas ul {
+  list-style-type: '• ';
+  padding-left: 1.2rem;
 }
 
-.area-card-custom:hover .icon-wrapper-custom {
-  transform: scale(1.1);
+/* TESTIMONIALS SECTION */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: var(--light-gray-bg);
 }
 
-.area-card-custom ul li {
-  font-size: 1rem;
-  color: #555;
-  font-weight: 500;
+.section-subtitle {
+    color: #666;
+    margin-top: -10px;
+}
+
+.testimonial-card {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.testimonial-card p {
+    flex-grow: 1;
+    color: #555;
+}
+
+.quote-icon {
+    font-family: var(--serif-font);
+    font-size: 3rem;
+    color: var(--dark-blue);
+    line-height: 1;
+}
+
+.author {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+}
+
+/* CTA SECTION */
+.cta-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.cta-subtitle {
+  font-style: italic;
+  color: #777;
+}
+
+.btn-cta {
+  background-color: var(--dark-blue);
+  color: #FFFFFF; /* CORRIGIDO */
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn-cta:hover {
+  background-color: #303d6a;
+  color: #FFFFFF;
+}
+
+.cta-image {
+  max-width: 80%;
+  height: 400px;
+  border-radius: 8px;
+}
+
+/* FOOTER SECTION */
+.footer-section {
+  background-color: var(--footer-blue);
+  color: #FFFFFF;
+  padding: 60px 0 30px 0;
+}
+
+.footer-section h5, .footer-section h6 {
+  color: var(--gold-text);
+  font-family: var(--serif-font);
+}
+
+.footer-section p {
+  color: #ccc;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
 }
 
-.area-card-custom ul li:hover {
-  color: #272949;
+.footer-logo {
+  max-height: 80px;
+  margin-bottom: 15px;
+}
+
+.footer-brand-name {
+    color: var(--gold-text) !important;
+    font-weight: bold;
+}
+
+.social-media-section {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.social-icons a {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: var(--gold-text);
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 991px) {
+    .areas-title {
+        margin-bottom: 30px;
+        text-align: center;
+        border-left: none;
+        border-bottom: 4px solid var(--gold-text);
+        padding-left: 0;
+        padding-bottom: 15px;
+    }
+    .cta-image {
+      display: none; /* Esconde a imagem em telas menores para focar no texto */
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .areas-cards-container {
+        grid-template-columns: 1fr;
+    }
+    .area-card.light-card {
+        grid-column: span 1; /* Ocupa uma coluna em mobile */
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+
+/* ================================================= */
+/* ============= NOVO LOGO CRIADO COM CSS ========== */
+/* ================================================= */
+.navbar-logo-css {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-right: 15px;
+  /* Este elemento principal cria o quadrado central (não rotacionado) */
+  border: 1px solid var(--gold-text);
+  flex-shrink: 0; /* Impede que o logo encolha se o espaço for pequeno */
+}
+
+/* Pseudo-elemento para criar o DIAMANTE EXTERNO (maior) */
+.navbar-logo-css::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid var(--gold-text);
+  transform: rotate(45deg);
+}
+
+/* Pseudo-elemento para criar o DIAMANTE INTERNO (menor) */
+.navbar-logo-css::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 1px solid var(--gold-text);
+  transform: rotate(45deg);
+}
+
+/* Estilização e posicionamento das letras */
+.navbar-logo-css span {
+  position: absolute;
+  font-family: var(--serif-font);
+  color: var(--gold-text);
+  font-weight: 300; /* Deixa a fonte mais fina, como na imagem */
+  line-height: 1;
+}
+
+.logo-text-c {
+  font-size: 34px;
+  top: 5px;
+  left: 11px;
+}
+
+.logo-text-a {
+  font-size: 34px;
+  bottom: 5px;
+  right: 11px;
 }
