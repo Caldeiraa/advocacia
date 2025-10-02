@@ -1,16 +1,13 @@
-// App.jsx (Código completo e corrigido)
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
-// A importação do logo de imagem foi removida pois não é mais necessária.
-// import Logo from './img/sua-logo.png'; 
 import PrimeiraIMG from './img/primeira-imagem.png';
-import LadyJusticeImg from './img/advogado.png';
-import AreasBgImg from './img/reuniao-escritorio.png';
+// import AreasBgImg from './img/reuniao-escritorio.png'; // Esta imagem não estava sendo usada, mantive a TerceiraImg
 import SegundaImg from './img/segunda-img.png'
+import TerceiraImg from './img/terceira-img.png'
 
 function App() {
   React.useEffect(() => {
@@ -34,19 +31,23 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // ===== NOVO LOGO EM SVG =====
+  const LogoSVG = () => (
+    <svg className="logo-svg-letters" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M82.13,63.31c-5.46,12.38-17.6,20.88-32.08,20.88c-19.8,0-35.84-18.36-35.84-41.02S30.25,2.15,50.05,2.15c14.17,0,26.1,8.1,31.56,19.9" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeMiterlimit="10"/>
+        <path d="M68.7,85.19L50.05,24.81L31.39,85.19H40.2l4.89-13.61h9.91l4.89,13.61H68.7ZM58.9,63.99H41.2l8.85-24.81L58.9,63.99Z" fill="currentColor"/>
+    </svg>
+  );
+
   return (
     <div className="app">
-      {/* SEÇÃO 1: HEADER (CABEÇALHO) - Conforme imagem 14d472.png */}
       <header className="navbar navbar-expand-lg sticky-top">
         <div className="container">
           <a className="navbar-brand" href="#home">
-            
-            {/* CÓDIGO DO LOGO ATUALIZADO AQUI */}
+            {/* ===== LOGO ATUALIZADO NO HEADER ===== */}
             <div className="navbar-logo-css">
-              <span className="logo-text-c">C</span>
-              <span className="logo-text-a">A</span>
+              <LogoSVG />
             </div>
-
             <div className="navbar-text">
               <span className="title">CARVALHO - ADVOCACIA</span>
               <span className="subtitle">ELIEZER DE SOUZA CARVALHO - OAB/ES 22.852</span>
@@ -67,7 +68,6 @@ function App() {
       </header>
 
       <main>
-        {/* SEÇÃO 2: HERO (INÍCIO) - Conforme imagem 14d472.png */}
         <section className="hero-section" id="home" style={{ backgroundImage: `url(${PrimeiraIMG})` }}>
           <div className="hero-overlay">
             <div className="container">
@@ -83,9 +83,6 @@ function App() {
           </div>
         </section>
 
-        {/* --- INÍCIO DA ORDEM SOLICITADA --- */}
-
-        {/* SEÇÃO 3: "SABEMOS QUE O DIREITO É DIFÍCIL" - Conforme imagem 14d4ae.png */}
         <section className="cta-section" id="sabemos">
             <div className="container">
                 <div className="row align-items-center">
@@ -104,57 +101,62 @@ function App() {
             </div>
         </section>
 
-        {/* SEÇÃO 4: ÁREAS DE ATUAÇÃO - Conforme imagem 14d4e7.jpg */}
-        <section className="areas-section" id="areas" style={{ backgroundImage: `url(${AreasBgImg})` }}>
-           <div className="areas-overlay">
-             <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-4">
-                        <h2 className="areas-title">ÁREAS DE ATUAÇÃO</h2>
-                    </div>
-                    <div className="col-lg-8">
-                        <div className="areas-cards-container">
-                            <div className="area-card dark-card">
-                                <h5>Ações de Alimentos</h5>
-                                <p>Buscamos no diálogo e na mediação a celeridade nas ações que envolvam alimentos, sempre resguardando o direito de nossos clientes.</p>
-                            </div>
-                             <div className="area-card dark-card">
-                                <h5>Divórcios</h5>
-                                <p>"A separação é um momento delicado, mas o divórcio pode ser conduzido de forma respeitosa e amigável. Atuamos para mediar os conflitos e assegurar que os direitos de cada parte sejam preservados."</p>
-                            </div>
-                            <div className="area-card light-card">
-                                <h5>Direito à Saúde <small>(com atenção especial ao autismo)</small></h5>
-                                <p>"Pessoas com autismo e suas famílias têm direitos assegurados por lei, incluindo acesso a tratamentos, medicamentos e terapias adequadas. Trabalhamos para garantir que esses direitos sejam respeitados, cobrando do Estado e dos planos de saúde o que é devido."</p>
-                            </div>
-                        </div>
-                        <div className="other-areas">
-                            <h5>Atuamos também nas áreas:</h5>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <strong>Direito Previdenciário</strong>
-                                    <ul>
-                                        <li>Aposentadorias</li>
-                                        <li>Benefícios em geral</li>
-                                    </ul>
-                                </div>
-                                <div className="col-md-6">
-                                    <strong>Direito Tributário</strong>
-                                    <ul>
-                                        <li>Restituição de Impostos</li>
-                                        <li>(Monofásicos - ICMS ST - etc).</li>
-                                        <li>Defesa em execução fiscal</li>
-                                        <li>Planejamento Tributário</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        {/* ======================================================= */}
+        {/* ============= SEÇÃO DE ÁREAS CORRIGIDA (SEM OVERLAY, TÍTULOS DE CARDS BRANCOS PRETOS) ============= */}
+        {/* ======================================================= */}
+        <section className="areas-section" id="areas" style={{ backgroundImage: `url(${TerceiraImg})` }}>
+          {/* O areas-overlay foi removido daqui */}
+            <div className="container">
+              <div className="row align-items-center">
+                <div className="col-lg-4">
+                  {/* O título agora terá a cor padrão para um fundo mais claro, talvez preto ou dark-blue */ }
+                  <h2 className="areas-title-no-overlay">ÁREAS DE ATUAÇÃO</h2>
                 </div>
-             </div>
-           </div>
+                <div className="col-lg-8">
+                  <div className="areas-cards-container">
+                    {/* Card 1 - Azul Escuro */}
+                    <div className="area-card dark-card">
+                      <h5>Ações de Alimentos</h5>
+                      <p>Buscamos no diálogo e na mediação a celeridade nas ações que envolvam alimentos, sempre resguardando o direito de nossos clientes.</p>
+                    </div>
+                    {/* Card 2 - Azul Escuro */}
+                    <div className="area-card dark-card">
+                      <h5>Divórcios</h5>
+                      <p>"A separação é um momento delicado, mas o divórcio pode ser conduzido de forma respeitosa e amigável. Atuamos para mediar os conflitos e assegurar que os direitos de cada parte sejam preservados."</p>
+                    </div>
+                    {/* Card 3 - Branco (removido span-2-columns) */}
+                    <div className="area-card white-card">
+                      <h5>Direito à Saúde <small>(com atenção especial ao autismo)</small></h5>
+                      <p>"Pessoas com autismo e suas famílias têm direitos assegurados por lei, incluindo acesso a tratamentos, medicamentos e terapias adequadas. Trabalhamos para garantir que esses direitos sejam respeitados, cobrando do Estado e dos planos de saúde o que é devido."</p>
+                    </div>
+                    {/* Card 4 - Branco (removido span-2-columns) */}
+                    <div className="area-card white-card other-areas-card">
+                      <h5>Atuamos também nas áreas:</h5>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <strong>Direito Previdenciário</strong>
+                          <ul>
+                            <li>Aposentadorias</li>
+                            <li>Benefícios em geral</li>
+                          </ul>
+                        </div>
+                        <div className="col-md-6">
+                          <strong>Direito Tributário</strong>
+                          <ul>
+                            <li>Restituição de Impostos</li>
+                            <li>(Monofásicos - ICMS ST - etc).</li>
+                            <li>Defesa em execução fiscal</li>
+                            <li>Planejamento Tributário</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </section>
         
-        {/* SEÇÃO 5: DEPOIMENTOS - Conforme imagem 14d7d6.png */}
         <section className="testimonials-section" id="depoimentos">
             <div className="container">
                 <h2 className="section-title text-center">Depoimento de Clientes</h2>
@@ -185,7 +187,6 @@ function App() {
             </div>
         </section>
 
-        {/* SEÇÃO 6: SOBRE NÓS, MISSÃO E VALORES - Conforme imagem 14d7af.png */}
         <section className="about-section" id="sobre">
           <div className="container">
             <h2 className="section-title">Sobre nós, missão e valores</h2>
@@ -212,15 +213,13 @@ function App() {
 
       </main>
 
-      {/* SEÇÃO FINAL: FOOTER E CONTATO - Conforme imagem 14d80e.png */}
       <footer className="footer-section" id="contato">
         <div className="container">
             <div className="row">
-                <div className="col-lg-3 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
-                    {/* Aqui você pode usar o logo em CSS novamente ou uma imagem, se preferir */}
-                    <div className="navbar-logo-css" style={{margin: '0 auto 15px auto'}}>
-                        <span className="logo-text-c">C</span>
-                        <span className="logo-text-a">A</span>
+                <div className="col-lg-3 col-md-12 text-center mb-4 mb-lg-0">
+                    {/* ===== LOGO ATUALIZADO NO RODAPÉ ===== */}
+                    <div className="navbar-logo-css" style={{ margin: '0 auto 15px auto' }}>
+                        <LogoSVG />
                     </div>
                     <p className="footer-brand-name">CARVALHO - ADVOCACIA</p>
                 </div>
@@ -231,7 +230,7 @@ function App() {
                         nº 310 - Vitória – ES
                     </p>
                     <p>(27) 92000-9296</p>
-                    <p>advocaciasouzacarvalho0[at]gmail.com</p>
+                    <p>advocaciasouzacarvalho01gmail.com</p>
                 </div>
                 <div className="col-lg-4 col-md-6">
                     <h5>Horário de Expediente</h5>

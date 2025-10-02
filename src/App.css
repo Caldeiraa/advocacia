@@ -1,16 +1,15 @@
-/* App.css (Código completo e corrigido) */
-
-/* FONTES (Exemplo usando Google Fonts, adicione no seu index.html se desejar) */
+/* FONTES */
 /* @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;700&display=swap'); */
 
 /* RESET E ESTILOS GLOBAIS */
 :root {
-  --dark-blue: #202945;
-  --footer-blue: #1A3A53;
-  --gold-text: #C4B078;
+  /* ===== CORES ATUALIZADAS ===== */
+  --dark-blue: #00314D;
+  --footer-blue: #00314D;
+  --gold-text: #C0A75E;
   --light-gray-bg: #EAE7E2;
-  --serif-font: 'Lora', serif; /* Fonte para títulos principais */
-  --sans-font: 'Roboto', sans-serif; /* Fonte para textos corridos */
+  --serif-font: 'Lora', serif;
+  --sans-font: 'Roboto', sans-serif;
 }
 
 body {
@@ -23,6 +22,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+
   font-family: var(--serif-font);
 }
 
@@ -54,32 +54,23 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-/* A classe .navbar-logo foi removida pois não é mais usada */
-/*
-.navbar-logo {
-  height: 60px;
-  margin-right: 15px;
-}
-*/
-
 .navbar-text {
   display: flex;
   flex-direction: column;
-  color: var(--gold-text);
 }
 
 .navbar-text .title {
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  color: #D4AF37;
+  color: var(--gold-text);
 }
 
 .navbar-text .subtitle {
   font-size: 0.7rem;
   letter-spacing: 1px;
   opacity: 0.9;
-  color: #D4AF37;
+  color: var(--gold-text);
 }
 
 .navbar-nav .nav-link {
@@ -110,7 +101,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-overlay {
-  /* background-color: rgba(255, 255, 255, 0.5); /* Overlay claro para legibilidade */
   padding: 2rem 0;
 }
 
@@ -149,22 +139,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #555;
 }
 
-/* ÁREAS DE ATUAÇÃO SECTION */
+/* ======================================================= */
+/* ============= ÁREAS DE ATUAÇÃO ATUALIZADO (SEM OVERLAY) ============= */
+/* ======================================================= */
 .areas-section {
-  padding: 80px 0;
+  padding: 80px 0; /* Padding restaurado diretamente na section */
   position: relative;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Efeito parallax */
-}
-.areas-overlay {
-    background-color: rgba(10, 20, 30, 0.7); /* Overlay escuro para legibilidade */
-    padding: 80px 0;
+  background-attachment: fixed;
+  /* areas-overlay removido */
 }
 
-.areas-title {
+/* Título para a seção sem o overlay */
+.areas-title-no-overlay {
   font-size: 3rem;
-  color: #FFFFFF;
+  color: var(--dark-blue); /* Cor preta ou azul escuro para o título */
   font-weight: bold;
   border-left: 4px solid var(--gold-text);
   padding-left: 20px;
@@ -172,47 +162,61 @@ h1, h2, h3, h4, h5, h6 {
 
 .areas-cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Duas colunas para os cards */
   gap: 20px;
 }
 
 .area-card {
   padding: 25px;
   border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra para destacar os cards */
 }
+/* Revertido para dark-card nos dois primeiros */
 .area-card.dark-card {
   background-color: var(--dark-blue);
   color: #FFF;
 }
-.area-card.light-card {
+.area-card.white-card { /* Classe para os cards brancos */
   background-color: #FFF;
   color: #333;
-  grid-column: span 2; /* Ocupa a largura toda */
 }
+
 .area-card h5 {
   font-weight: bold;
-  color: var(--gold-text);
+  /* Cor gold-text para cards dark-blue */
+  color: var(--gold-text); 
+  margin-bottom: 15px;
+}
+.area-card.white-card h5 { /* Cor do título para cards brancos: PRETO */
+    color: #000000; /* Cor preta para o título do card branco */
 }
 .area-card small {
   font-size: 0.9em;
   color: #999;
 }
 
-.other-areas {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  color: #333;
+/* Faz com que os cards com a classe .span-2-columns ocupem 2 colunas */
+/* Essa classe foi removida do App.js, mas mantida aqui caso queira reverter */
+.areas-cards-container .span-2-columns {
+    grid-column: span 2;
 }
-.other-areas h5 {
-    color: var(--dark-blue);
-    font-weight: bold;
+
+/* Estilos específicos para o card "Atuamos também nas áreas" */
+.other-areas-card h5 {
+   color: #000000; /* Cor preta para o título deste card específico */
 }
-.other-areas ul {
+
+.other-areas-card ul {
   list-style-type: '• ';
   padding-left: 1.2rem;
+  margin-bottom: 1rem;
 }
+
+.other-areas-card li {
+  margin-bottom: 0.25rem;
+}
+
+/* ======================================================= */
 
 /* TESTIMONIALS SECTION */
 .testimonials-section {
@@ -267,18 +271,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-cta {
-  background-color: var(--dark-blue);
-  color: #FFFFFF; /* CORRIGIDO */
+  display: inline-block; /* Garante o comportamento correto de botão */
+  background-color: var(--dark-blue) !important; /* Força a cor de fundo azul */
+  color: #FFFFFF !important; /* Força a cor do texto para branco */
   padding: 12px 30px;
   border-radius: 5px;
   font-weight: bold;
   margin-top: 20px;
+  text-decoration: none; /* Remove o sublinhado padrão de links */
+  border: none; /* Remove qualquer borda que o Bootstrap possa adicionar */
   transition: background-color 0.3s;
 }
 
 .btn-cta:hover {
-  background-color: #303d6a;
-  color: #FFFFFF;
+  background-color: #00486e !important; /* Cor mais clara para o hover */
+  color: #FFFFFF !important;
+  text-decoration: none;
 }
 
 .cta-image {
@@ -305,11 +313,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
-.footer-logo {
-  max-height: 80px;
-  margin-bottom: 15px;
-}
-
 .footer-brand-name {
     color: var(--gold-text) !important;
     font-weight: bold;
@@ -332,18 +335,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--gold-text);
 }
 
-/* MEDIA QUERIES PARA RESPONSIVIDADE */
+/* MEDIA QUERIES */
 @media (max-width: 991px) {
-    .areas-title {
+    .areas-title-no-overlay { /* Alterado para a nova classe */
         margin-bottom: 30px;
         text-align: center;
         border-left: none;
         border-bottom: 4px solid var(--gold-text);
         padding-left: 0;
         padding-bottom: 15px;
+        color: var(--dark-blue); /* Mantém azul escuro em telas menores */
     }
     .cta-image {
-      display: none; /* Esconde a imagem em telas menores para focar no texto */
+      display: none;
     }
 }
 
@@ -352,30 +356,42 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 2.5rem;
     }
     .areas-cards-container {
-        grid-template-columns: 1fr;
-    }
-    .area-card.light-card {
-        grid-column: span 1; /* Ocupa uma coluna em mobile */
+        grid-template-columns: 1fr; /* Em telas menores, os cards ficam em uma única coluna */
     }
     .footer-section {
         text-align: center;
     }
 }
 
+
 /* ================================================= */
-/* ============= NOVO LOGO CRIADO COM CSS ========== */
+/* ============= NOVO LOGO GIRATÓRIO (CSS) ========= */
 /* ================================================= */
+
+/* Animação de rotação */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container principal do logo */
 .navbar-logo-css {
   width: 60px;
   height: 60px;
   position: relative;
   margin-right: 15px;
-  /* Este elemento principal cria o quadrado central (não rotacionado) */
+  /* O quadrado central (não rotacionado) */
   border: 1px solid var(--gold-text);
-  flex-shrink: 0; /* Impede que o logo encolha se o espaço for pequeno */
+  flex-shrink: 0;
+  /* ===== ANIMAÇÃO APLICADA AQUI ===== */
+  animation: spin 20s linear infinite;
 }
 
-/* Pseudo-elemento para criar o DIAMANTE EXTERNO (maior) */
+/* Diamante externo */
 .navbar-logo-css::before {
   content: '';
   position: absolute;
@@ -387,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(45deg);
 }
 
-/* Pseudo-elemento para criar o DIAMANTE INTERNO (menor) */
+/* Diamante interno */
 .navbar-logo-css::after {
   content: '';
   position: absolute;
@@ -399,23 +415,14 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(45deg);
 }
 
-/* Estilização e posicionamento das letras */
-.navbar-logo-css span {
+/* Estilização e posicionamento do SVG com as letras */
+.logo-svg-letters {
   position: absolute;
-  font-family: var(--serif-font);
+  top: 50%;
+  left: 50%;
+  /* Centraliza o SVG perfeitamente */
+  transform: translate(-50%, -50%); 
+  width: 90%; /* Ajuste o tamanho conforme necessário */
+  height: 90%;
   color: var(--gold-text);
-  font-weight: 300; /* Deixa a fonte mais fina, como na imagem */
-  line-height: 1;
-}
-
-.logo-text-c {
-  font-size: 34px;
-  top: 5px;
-  left: 11px;
-}
-
-.logo-text-a {
-  font-size: 34px;
-  bottom: 5px;
-  right: 11px;
 }
