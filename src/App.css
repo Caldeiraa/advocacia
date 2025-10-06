@@ -1,13 +1,16 @@
-/* FONTES */
-/* @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;700&display=swap'); */
+/* FONTES - AGORA IMPORTANDO O PESO 300 (LIGHT) DA LORA */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
 /* RESET E ESTILOS GLOBAIS */
 :root {
-  /* ===== CORES ATUALIZADAS ===== */
-  --dark-blue: #00314D;
+  /* Cores exatas das imagens */
+  --navbar-blue: #232C45;
   --footer-blue: #00314D;
-  --gold-text: #C0A75E;
-  --light-gray-bg: #EAE7E2;
+  --gold-text: #B3A078;
+  --light-text: #EAE7E2; 
+  --white-text: #FFFFFF;
+  --light-gray-bg: #F8F9FA;
+  
   --serif-font: 'Lora', serif;
   --sans-font: 'Roboto', sans-serif;
 }
@@ -21,68 +24,115 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-
-  font-family: var(--serif-font);
+/* ================================================= */
+/* ============= ESTILOS DA LOGO SVG =============== */
+/* ================================================= */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.section-title {
-  font-family: var(--serif-font);
-  color: #333;
-  margin-bottom: 1rem;
+.logo-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--gold-text);
+  overflow: visible;
 }
 
-.text-content {
-  color: #555;
-  line-height: 1.7;
+.logo-rotating-group {
+  transform-origin: center center;
+  animation: spin 20s linear infinite;
 }
 
-/* HEADER / NAVBAR */
+/* ===== NOVAS REGRAS CSS PARA AJUSTAR AS LETRAS ===== */
+.logo-letters-group text {
+  font-family: var(--serif-font); /* Usa a fonte Lora */
+  text-anchor: middle;
+  fill: currentColor;
+  font-weight: 300; /* Força o uso do peso 300 (light) que importamos */
+}
+
+.logo-letter-c {
+  /* Move a letra 'C' 5 pixels para cima */
+  transform: translateY(-5px);
+}
+/* ================================================= */
+
+
+/* ================================================= */
+/* ============= HEADER / NAVBAR ATUALIZADA ======== */
+/* ================================================= */
 .navbar {
-  background-color: var(--dark-blue);
-  padding: 10px 0;
-  border-bottom: 1px solid var(--gold-text);
+  background-color: var(--navbar-blue);
+  padding: 8px 0;
   transition: all 0.3s ease-in-out;
 }
 
 .navbar.nav-scrolled {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
+  padding: 0;
+  margin-right: 2rem;
 }
 
-.navbar-text {
+.logo-wrapper-nav {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.navbar-text-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.navbar-text .title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+.brand-title {
+  font-family: var(--serif-font);
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--gold-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(179, 160, 120, 0.5);
 }
 
-.navbar-text .subtitle {
+.brand-subtitle {
+  font-family: var(--sans-font);
   font-size: 0.7rem;
-  letter-spacing: 1px;
-  opacity: 0.9;
-  color: var(--gold-text);
+  color: var(--light-text);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 2px;
 }
 
 .navbar-nav .nav-link {
-  color: #FFFFFF;
-  font-weight: 500;
-  margin: 0 15px;
-  transition: color 0.3s;
+  font-family: var(--serif-font);
+  color: var(--white-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-left: 25px;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
   color: var(--gold-text);
+  text-shadow: 0 0 8px rgba(179, 160, 120, 0.7);
 }
+
 .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.5);
 }
@@ -91,338 +141,105 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* HERO SECTION */
-.hero-section {
-  background-size: cover;
-  background-position: center;
-  color: #000;
-  padding: 120px 0;
-  position: relative;
-}
-
-.hero-overlay {
-  padding: 2rem 0;
-}
-
-.hero-title {
-  font-family: var(--serif-font);
-  font-size: 3.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  max-width: 500px;
-  margin-top: 20px;
-}
-
-/* ABOUT SECTION */
-.about-section {
-  padding: 80px 0;
-  background-color: #FFF;
-}
-
-.subsection-title {
-  font-family: var(--serif-font);
-  font-weight: bold;
-  margin-top: 2rem;
-}
-
-.values-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.values-list li {
-  margin-bottom: 0.5rem;
-  color: #555;
-}
-
-/* ======================================================= */
-/* ============= ÁREAS DE ATUAÇÃO ATUALIZADO (SEM OVERLAY) ============= */
-/* ======================================================= */
-.areas-section {
-  padding: 80px 0; /* Padding restaurado diretamente na section */
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  /* areas-overlay removido */
-}
-
-/* Título para a seção sem o overlay */
-.areas-title-no-overlay {
-  font-size: 3rem;
-  color: var(--dark-blue); /* Cor preta ou azul escuro para o título */
-  font-weight: bold;
-  border-left: 4px solid var(--gold-text);
-  padding-left: 20px;
-}
-
-.areas-cards-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas para os cards */
-  gap: 20px;
-}
-
-.area-card {
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra para destacar os cards */
-}
-/* Revertido para dark-card nos dois primeiros */
-.area-card.dark-card {
-  background-color: var(--dark-blue);
-  color: #FFF;
-}
-.area-card.white-card { /* Classe para os cards brancos */
-  background-color: #FFF;
-  color: #333;
-}
-
-.area-card h5 {
-  font-weight: bold;
-  /* Cor gold-text para cards dark-blue */
-  color: var(--gold-text); 
-  margin-bottom: 15px;
-}
-.area-card.white-card h5 { /* Cor do título para cards brancos: PRETO */
-    color: #000000; /* Cor preta para o título do card branco */
-}
-.area-card small {
-  font-size: 0.9em;
-  color: #999;
-}
-
-/* Faz com que os cards com a classe .span-2-columns ocupem 2 colunas */
-/* Essa classe foi removida do App.js, mas mantida aqui caso queira reverter */
-.areas-cards-container .span-2-columns {
-    grid-column: span 2;
-}
-
-/* Estilos específicos para o card "Atuamos também nas áreas" */
-.other-areas-card h5 {
-   color: #000000; /* Cor preta para o título deste card específico */
-}
-
-.other-areas-card ul {
-  list-style-type: '• ';
-  padding-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.other-areas-card li {
-  margin-bottom: 0.25rem;
-}
-
-/* ======================================================= */
-
-/* TESTIMONIALS SECTION */
-.testimonials-section {
-    padding: 80px 0;
-    background-color: var(--light-gray-bg);
-}
-
-.section-subtitle {
-    color: #666;
-    margin-top: -10px;
-}
-
-.testimonial-card {
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.testimonial-card p {
-    flex-grow: 1;
-    color: #555;
-}
-
-.quote-icon {
-    font-family: var(--serif-font);
-    font-size: 3rem;
-    color: var(--dark-blue);
-    line-height: 1;
-}
-
-.author {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-    font-weight: bold;
-    font-style: italic;
-    color: #333;
-}
-
-/* CTA SECTION */
-.cta-section {
-  padding: 80px 0;
-  background-color: #FFFFFF;
-}
-
-.cta-subtitle {
-  font-style: italic;
-  color: #777;
-}
-
-.btn-cta {
-  display: inline-block; /* Garante o comportamento correto de botão */
-  background-color: var(--dark-blue) !important; /* Força a cor de fundo azul */
-  color: #FFFFFF !important; /* Força a cor do texto para branco */
-  padding: 12px 30px;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 20px;
-  text-decoration: none; /* Remove o sublinhado padrão de links */
-  border: none; /* Remove qualquer borda que o Bootstrap possa adicionar */
-  transition: background-color 0.3s;
-}
-
-.btn-cta:hover {
-  background-color: #00486e !important; /* Cor mais clara para o hover */
-  color: #FFFFFF !important;
-  text-decoration: none;
-}
-
-.cta-image {
-  max-width: 80%;
-  height: 400px;
-  border-radius: 8px;
-}
-
-/* FOOTER SECTION */
+/* ================================================= */
+/* ================ RODAPÉ ATUALIZADO ================ */
+/* ================================================= */
 .footer-section {
   background-color: var(--footer-blue);
-  color: #FFFFFF;
-  padding: 60px 0 30px 0;
+  color: var(--white-text);
+  padding: 70px 0;
 }
 
-.footer-section h5, .footer-section h6 {
-  color: var(--gold-text);
-  font-family: var(--serif-font);
-}
-
-.footer-section p {
-  color: #ccc;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+.logo-wrapper-footer {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
 }
 
 .footer-brand-name {
-    color: var(--gold-text) !important;
-    font-weight: bold;
-}
-
-.social-media-section {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 40px;
-    padding-top: 30px;
-}
-
-.social-icons a {
-  color: #FFFFFF;
+  font-family: var(--serif-font);
+  font-weight: 700;
   font-size: 1.5rem;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-.social-icons a:hover {
   color: var(--gold-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* MEDIA QUERIES */
+.footer-title {
+  font-family: var(--serif-font);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--white-text);
+  margin-bottom: 25px;
+}
+
+.footer-text {
+  font-family: var(--sans-font);
+  font-size: 1rem;
+  color: var(--light-text);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 991px) {
-    .areas-title-no-overlay { /* Alterado para a nova classe */
-        margin-bottom: 30px;
-        text-align: center;
-        border-left: none;
-        border-bottom: 4px solid var(--gold-text);
-        padding-left: 0;
-        padding-bottom: 15px;
-        color: var(--dark-blue); /* Mantém azul escuro em telas menores */
-    }
-    .cta-image {
-      display: none;
-    }
+  .footer-col-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
 
+
+/* ================================================= */
+/* ==== ESTILOS DO CONTEÚDO (Mantidos como antes) ==== */
+/* ================================================= */
+
+.hero-section { background-size: cover; background-position: center; color: #000; padding: 120px 0; position: relative; }
+.hero-overlay { padding: 2rem 0; }
+.hero-title { font-family: var(--serif-font); font-size: 3.5rem; font-weight: bold; line-height: 1.2; }
+.hero-subtitle { font-size: 1.2rem; max-width: 500px; margin-top: 20px; }
+.about-section { padding: 80px 0; background-color: #FFF; }
+.subsection-title { font-family: var(--serif-font); font-weight: bold; margin-top: 2rem; }
+.values-list { list-style: none; padding-left: 0; }
+.values-list li { margin-bottom: 0.5rem; color: #555; }
+.areas-section { padding: 80px 0; position: relative; background-size: cover; background-position: center; background-attachment: fixed; }
+.areas-title-no-overlay { font-size: 3rem; color: var(--footer-blue); font-weight: bold; border-left: 4px solid var(--gold-text); padding-left: 20px; }
+.areas-cards-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.area-card { padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+.area-card.dark-card { background-color: var(--footer-blue); color: #FFF; }
+.area-card.white-card { background-color: #FFF; color: #333; }
+.area-card h5 { font-weight: bold; color: var(--gold-text); margin-bottom: 15px; }
+.area-card.white-card h5 { color: #000000; }
+.area-card small { font-size: 0.9em; color: #999; }
+.other-areas-card h5 { color: #000000; }
+.other-areas-card ul { list-style-type: '• '; padding-left: 1.2rem; margin-bottom: 1rem; }
+.other-areas-card li { margin-bottom: 0.25rem; }
+.testimonials-section { padding: 80px 0; background-color: var(--light-gray-bg); }
+.section-title { font-family: var(--serif-font); color: #333; margin-bottom: 1rem; }
+.section-subtitle { color: #666; margin-top: -10px; }
+.testimonial-card { background-color: #FFFFFF; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; }
+.testimonial-card p { flex-grow: 1; color: #555; }
+.quote-icon { font-family: var(--serif-font); font-size: 3rem; color: var(--footer-blue); line-height: 1; }
+.author { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-weight: bold; font-style: italic; color: #333; }
+.cta-section { padding: 80px 0; background-color: #FFFFFF; }
+.cta-subtitle { font-style: italic; color: #777; }
+.btn-cta { display: inline-block; background-color: var(--footer-blue) !important; color: #FFFFFF !important; padding: 12px 30px; border-radius: 5px; font-weight: bold; margin-top: 20px; text-decoration: none; border: none; transition: background-color 0.3s; }
+.btn-cta:hover { background-color: #00486e !important; color: #FFFFFF !important; text-decoration: none; }
+.cta-image { max-width: 80%; height: 400px; border-radius: 8px; }
+
+/* Media Queries para responsividade */
+@media (max-width: 991px) {
+  .areas-title-no-overlay { margin-bottom: 30px; text-align: center; border-left: none; border-bottom: 4px solid var(--gold-text); padding-left: 0; padding-bottom: 15px; }
+  .cta-image { display: none; }
+  .navbar-nav { background-color: var(--navbar-blue); padding: 1rem; text-align: center; }
+  .navbar-nav .nav-link { margin: 10px 0; }
+}
 @media (max-width: 767px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .areas-cards-container {
-        grid-template-columns: 1fr; /* Em telas menores, os cards ficam em uma única coluna */
-    }
-    .footer-section {
-        text-align: center;
-    }
-}
-
-
-/* ================================================= */
-/* ============= NOVO LOGO GIRATÓRIO (CSS) ========= */
-/* ================================================= */
-
-/* Animação de rotação */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Container principal do logo */
-.navbar-logo-css {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  margin-right: 15px;
-  /* O quadrado central (não rotacionado) */
-  border: 1px solid var(--gold-text);
-  flex-shrink: 0;
-  /* ===== ANIMAÇÃO APLICADA AQUI ===== */
-  animation: spin 20s linear infinite;
-}
-
-/* Diamante externo */
-.navbar-logo-css::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border: 1px solid var(--gold-text);
-  transform: rotate(45deg);
-}
-
-/* Diamante interno */
-.navbar-logo-css::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border: 1px solid var(--gold-text);
-  transform: rotate(45deg);
-}
-
-/* Estilização e posicionamento do SVG com as letras */
-.logo-svg-letters {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* Centraliza o SVG perfeitamente */
-  transform: translate(-50%, -50%); 
-  width: 90%; /* Ajuste o tamanho conforme necessário */
-  height: 90%;
-  color: var(--gold-text);
+  .hero-title { font-size: 2.5rem; }
+  .areas-cards-container { grid-template-columns: 1fr; }
+  .footer-section { text-align: center; }
+  .footer-section .row > div { margin-bottom: 30px; }
+  .footer-section .row > div:last-child { margin-bottom: 0; }
 }
