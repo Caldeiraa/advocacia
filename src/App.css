@@ -243,3 +243,39 @@ body {
   .footer-section .row > div { margin-bottom: 30px; }
   .footer-section .row > div:last-child { margin-bottom: 0; }
 }
+
+
+/* ======================================================= */
+/* =========== NOVOS ESTILOS PARA REDES SOCIAIS ========== */
+/* ======================================================= */
+.social-media-section {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 40px;
+  padding-top: 30px;
+}
+
+.social-media-title {
+  font-family: var(--serif-font);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--light-text);
+  margin-bottom: 20px;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icon-link {
+  color: var(--white-text);
+  font-size: 2rem; /* Tamanho dos ícones */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: var(--gold-text); /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Efeito de zoom */
+}
