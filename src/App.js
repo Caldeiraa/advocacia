@@ -34,6 +34,30 @@ const Logo = ({ isAnimated }) => (
 </svg>
 );
 
+const LogoFooter = ({ isAnimated }) => (
+<svg className="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  {/* Grupo de formas geométricas (losangos) */}
+  <g 
+    className={isAnimated ? "logo-rotating-group" : ""}
+    fill="none" 
+    stroke="currentColor"
+    strokeWidth="1.5" /* Linhas mais finas como no protótipo */
+  >
+    {/* Todos os quadrados são rotacionados em 45° para virarem losangos */}
+    <rect x="30" y="40" width="150" height="150"  transform="rotate(45 100 100)" />
+    <rect x="20" y="30" width="170" height="170" transform="rotate(45 100 100)" />
+    <rect x="0" y="25" width="180" height="180" transform="rotate( 100 100)" />
+   {/* <rect x="63" y="63" width="74" height="74" transform="rotate(45 100 100)" />*/}
+  </g>
+  
+  {/* Grupo das letras C e A com posicionamento ajustado */}
+  <g className="logo-letters-group">
+    <text className="logo-letter-c" x="75" y="140" fontSize="70">C</text>
+    <text className="logo-letter-a" x="117" y="150" fontSize="70">A</text>
+  </g>
+</svg>
+);
+
 
 function App() {
   React.useEffect(() => {
@@ -228,7 +252,7 @@ function App() {
           <div className="row">
             <div className="col-lg-4 col-md-12 footer-col-logo">
               <div className="logo-wrapper-footer">
-                <Logo isAnimated={true} />
+                <LogoFooter isAnimated={true} />
               </div>
               <p className="footer-brand-name">CARVALHO - ADVOCACIA</p>
             </div>
