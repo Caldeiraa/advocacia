@@ -24,7 +24,7 @@ const Logo = ({ isAnimated }) => (
     <rect x="30" y="40" width="150" height="150"  transform="rotate(45 100 100)" />
     <rect x="20" y="30" width="170" height="170" transform="rotate(45 100 100)" />
     <rect x="0" y="25" width="180" height="180" transform="rotate( 100 100)" />
-   {/* <rect x="63" y="63" width="74" height="74" transform="rotate(45 100 100)" />*/}
+    {/* <rect x="63" y="63" width="74" height="74" transform="rotate(45 100 100)" />*/}
   </g>
   
   {/* Grupo das letras C e A com posicionamento ajustado */}
@@ -48,7 +48,7 @@ const LogoFooter = ({ isAnimated }) => (
     <rect x="30" y="40" width="150" height="150"  transform="rotate(45 100 100)" />
     <rect x="20" y="30" width="170" height="170" transform="rotate(45 100 100)" />
     <rect x="0" y="25" width="180" height="180" transform="rotate( 100 100)" />
-   {/* <rect x="63" y="63" width="74" height="74" transform="rotate(45 100 100)" />*/}
+    {/* <rect x="63" y="63" width="74" height="74" transform="rotate(45 100 100)" />*/}
   </g>
   
   {/* Grupo das letras C e A com posicionamento ajustado */}
@@ -122,7 +122,6 @@ function App() {
             <div className="hero-overlay">
             <div className="container">
                 <div className="row">
-                {/* ===== CORREÇÃO APLICADA AQUI ===== */}
                 <div className="col-lg-8 col-md-10 col-12 text-center text-lg-start">
                     <h1 className="hero-title">Consultoria Jurídica de Excelência</h1>
                     <p className="hero-subtitle">
